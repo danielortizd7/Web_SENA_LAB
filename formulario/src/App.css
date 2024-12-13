@@ -1,0 +1,139 @@
+/* Paleta de colores */
+:root {
+  --fondo-degradado-inicio: #a8edea;
+  --fondo-degradado-fin: #fed6e3;
+  --fondo-principal: white;
+  --sombra-caja: rgba(0, 0, 0, 0.2);
+  --texto-principal: #333;
+  --texto-secundario: #555;
+  --borde-input: #ccc;
+  --borde-focus: #a8edea;
+  --verde-boton-inicio: #2dc637;
+  --verde-boton-fin: #11bb17;
+  --verde-hover: #21d569;
+}
+
+/* Estilo global */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, var(--fondo-degradado-inicio), var(--fondo-degradado-fin));
+  overflow: hidden;
+}
+
+/* Contenedor principal */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fondo-principal);
+  padding: 2vh 2vw; /* Reducir padding */
+  border-radius: 12px; /* Borde redondeado */
+  box-shadow: 0px 4px 20px var(--sombra-caja); /* Sombra más suave */
+  width: 90%;
+  max-width: 300px; /* Reducir el tamaño máximo */
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Títulos */
+h2 {
+  font-size: 1.6vh; /* Reducir tamaño del título */
+  color: var(--texto-secundario);
+  margin: 1.5vh 0; /* Reducir margen superior e inferior */
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Etiquetas */
+label {
+  margin-bottom: 2px; /* Reducir margen inferior */
+  font-weight: 500;
+  font-size: 12px; /* Reducir tamaño del texto de las etiquetas */
+  color: var(--texto-secundario);
+}
+
+/* Campos de entrada */
+input {
+  padding: 1vh; /* Reducir padding de los campos de entrada */
+  margin-bottom: 2vh; /* Reducir margen inferior */
+  border: 1px solid var(--borde-input);
+  border-radius: 6px; /* Redondear un poco menos */
+  font-size: 1.6vh; /* Reducir tamaño de la fuente de los inputs */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--borde-focus);
+  outline: none;
+  background-color: var(--fondo-principal);
+}
+
+/* Botones */
+button {
+  padding: 0.8vh 1.8vh; /* Reducir padding del botón */
+  background: linear-gradient(90deg, var(--verde-boton-inicio), var(--verde-boton-fin));
+  color: white;
+  border: none;
+  border-radius: 6px; /* Redondear un poco menos */
+  cursor: pointer;
+  font-size: 1.4vh; /* Reducir tamaño del texto del botón */
+  width: 55%;
+  box-sizing: border-box;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, var(--verde-hover), var(--verde-hover));
+  transform: translateY(-1px); /* Reducir el movimiento al hacer hover */
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Espaciado entre elementos */
+div {
+  margin-bottom: 10px; /* Reducir el espaciado entre los divs */
+}
+
+/* Adaptación para dispositivos pequeños */
+@media (max-width: 768px) {
+  .App {
+    padding: 4vh 4vw;
+  }
+
+  h2 {
+    font-size: 2vh;
+  }
+
+  button {
+    font-size: 1.6vh; /* Reducir más el tamaño del botón en pantallas pequeñas */
+  }
+}
